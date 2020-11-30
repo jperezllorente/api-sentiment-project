@@ -32,7 +32,7 @@ The second endpoint, [sentimen](http://localhost:5000/sentiment/<title>), allows
  
  title = "Vengadores: Infinity War"
  
- #POST 
+ # @POST 
  For administrators, the API counts with the [new_review](http://localhost:5000/new_review)  endpoint that allows the user to, with the permission of the administrator, update the reviews of a certain title, or add
  a new one to the database. The information we want to add should be given in a dictionary format, as shown in the example:
  
