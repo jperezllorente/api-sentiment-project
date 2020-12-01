@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    readme_file = open("README.md", "r")
+    readme_file = open("index.md", "r")
     md_template_string = markdown.markdown(readme_file.read(), extensions=["fenced_code"])
     return md_template_string
 
@@ -17,7 +17,6 @@ def index():
 @app.route("/reviews/<title>", methods=["GET"])
 def total_reviews(title):
     critica = get.film_review(title)
-    print(critica)
     return json.dumps(critica)
 
 

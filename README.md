@@ -21,14 +21,13 @@ reviews from different titles, I have used two a series of functions that can be
 
 ## API
 
-
 Inside the API users can find two types of endpoints that can be accessed depending on the interests of the 
 individual. 
 
 ### @GET 
 In this section there are two endpoints users can use to extract information from the database.
 
-The first one is the [total_reviews](http://locaclhost:5000/total_reviews/<title>) endpoint, that allows the 
+The first one is the **total_reviews** endpoint, that allows the 
 user to extract all the reviews of a certain title available in the database. 
 
 Example: 
@@ -37,7 +36,9 @@ url = http://locaclhost:5000/total_reviews/<title>
 
 title = "Salvar al soldado Ryan"
 
-The second endpoint, [sentimen](http://localhost:5000/sentiment/<title>), allows the user to extract the sentiment
+requests.get(url + title)
+
+The second endpoint, **sentiment**, allows the user to extract the sentiment
  analysis of the reviews available in the database. As obtaining the results from all the reviews would be pointless,
  the result is a list with the percentage of each polarity (positive, negative, neutral). 
  
@@ -47,8 +48,10 @@ The second endpoint, [sentimen](http://localhost:5000/sentiment/<title>), allows
  
  title = "Vengadores: Infinity War"
  
+ requests.get(url + title)
+ 
  ### @POST 
- For administrators, the API counts with the [new_review](http://localhost:5000/new_review)  endpoint that allows the user to, with the permission of the administrator, update the reviews of a certain title, or add
+ For administrators, the API counts with the **new_review**  endpoint that allows the user to, with the permission of the administrator, update the reviews of a certain title, or add
  a new one to the database. The information we want to add should be given in a dictionary format, as shown in the example:
  
 url = http://localhost:5000/new_review
@@ -57,6 +60,8 @@ lista = ["Increible película"] (The reason for this list is that I set database
  
 datos = {'title': "El señor de los anillos: La comunidad del anillo", 
         'reviews': lista}
+        
+requests.post(url, datos)
         
 
 ## Improvements to be made

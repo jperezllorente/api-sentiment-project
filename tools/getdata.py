@@ -1,12 +1,5 @@
 from configuration.config import collection
-import nltk
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from nltk.tokenize import RegexpTokenizer
-from nltk.corpus import stopwords
-from textblob import TextBlob
-import spacy
-from spacy import displacy
-
+import tools.extraction as ext
 
 def film_review(title):
     '''
@@ -20,20 +13,6 @@ def film_review(title):
     print(query)
     reviews = list(collection.find(query,{"_id":0}))
     return reviews
-
-
-def sentimentAnalysis(sentence):
-    '''
-    This function receives a sentence as argument, and returns a list with the compound sentiment analysis. This
-    result will tell us if the sentence is either negatively, positively or neutraly polarized.
-
-    This function on its own wont be useful to us, but it will be necessary for the next one.
-    '''
-
-    sia = SentimentIntensityAnalyzer()
-    pol = sia.polarity_scores(sentence)
-    polarity = pol["compound"]
-    return polarity
 
 
 def sentiment(title):
@@ -67,7 +46,7 @@ def sentiment(title):
 
     lista = [i for i in r]
 
-    sentiment = [sentimentAnalysis(i) for i in lista]
+    sentiment = [ext.sentimentAnalysis(i) for i in lista]
 
     for i in sentiment:
 
