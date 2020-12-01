@@ -7,10 +7,20 @@ what is the general opinion of users (sentiment analysis) towards a certain titl
 Before explaining the endpoints available, I wanted to point out that in order to fill the collection with lots of 
 reviews from different titles, I have used two a series of functions that can be found in the jupyter notebook. 
 
+
+## Collection Structure
+
+- Title -> string with the title of the movie or tv show
+- Reviews-> array with all the reviews of a single title
+
+
+## API
+
+
 Inside the API users can find two types of endpoints that can be accessed depending on the interests of the 
 individual. 
 
-# @GET 
+### @GET 
 In this section there are two endpoints users can use to extract information from the database.
 
 The first one is the [total_reviews](http://locaclhost:5000/total_reviews/<title>) endpoint, that allows the 
@@ -32,7 +42,7 @@ The second endpoint, [sentimen](http://localhost:5000/sentiment/<title>), allows
  
  title = "Vengadores: Infinity War"
  
- # @POST 
+ ### @POST 
  For administrators, the API counts with the [new_review](http://localhost:5000/new_review)  endpoint that allows the user to, with the permission of the administrator, update the reviews of a certain title, or add
  a new one to the database. The information we want to add should be given in a dictionary format, as shown in the example:
  
@@ -44,7 +54,7 @@ datos = {'title': "El señor de los anillos: La comunidad del anillo",
         'reviews': lista}
         
 
-# Improvements to be made
+## Improvements to be made
 
 The way I extract the information from the websites is by scraping, and even though the result has been positive, if there are more than one page of reviews the process becomes inefficient. For this reason, it would be 
 a better option to use another library like Selenium. 
