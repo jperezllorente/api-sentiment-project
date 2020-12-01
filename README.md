@@ -1,5 +1,10 @@
 # MOVIE & TV SHOWS REVIEWS API
 
+<p align="center">
+  <img width="460" height="300" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIiwNJV7LmXbg99JJl8SZzXny7dk1KxmAedQ&usqp=CAU">
+</p>
+
+
 In this project I did during the Ironhack bootcamp I created an API that is linked to a Mongodb
 collection and from which we can extract reviews from movies and tv shows, and get a picture of 
 what is the general opinion of users (sentiment analysis) towards a certain title. 
